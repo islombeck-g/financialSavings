@@ -1,40 +1,55 @@
-
 import Foundation
 import CoreData
 
-
 class DataController:ObservableObject{
-    let container = NSPersistentContainer(name: "Waste")
     
+    @Published var savedEntities:[WasteEntity] = []
+    let container:NSPersistentContainer
     
     init(){
-        container.loadPersistentStores{desc, error in
-            if let error = error{
-                print("failed load data \(error.localizedDescription)")
+        container = NSPersistentContainer(name: "WasteData")
+        container.loadPersistentStores{(desc, error) in
+            if error != nil{
+                print("ERRROOOORRR")
             }
-            
         }
+        fetchWaste()
     }
-    func save(context: NSManagedObjectContext){
+
+    func fetchWaste(){
+        let request = NSFetchRequest<WasteEntity>(entityName: "WasteEntity")
         do{
-            try context.save()
-            print("dataSaved")
-        }catch{
-            print("dataSave ERROR,ERROR,ERROR,ERROR,ERROR")
+            savedEntities = try container.viewContext.fetch(request)
+        }catch let error{
+            print("error \(error)")
         }
     }
-    
-    func addWaste(category: String, count: Double, note:String, context:NSManagedObjectContext){
-        let waste = Waste(context:context)
+    func addWaste(category: String, count: Double, note:String){
+        let waste = WasteEntity(context:container.viewContext)
         waste.id = UUID()
         waste.category = category
         waste.count = count
         waste.note = note
         waste.date = Date()
-        save(context: context)
+        saveData()
     }
     
+    func saveData() {
+        do {
+            try container.viewContext.save()
+            fetchWaste()
+            print("Data saved successfully.")
+        } catch let error {
+            print("Failed to save data: \(error.localizedDescription)")
+        }
+    }
     
+//    func editWaste(waste:Waste, count:Double, category:String, note:String, context:NSManagedObjectContext){
+//        waste.count = count
+//        waste.category = category
+//        waste.note = note
+//        save(context: context)
+//    }
     
 }
 

@@ -15,7 +15,6 @@ struct BalanceView: View {
                     .fontWeight(.bold)
                     .foregroundColor(.black)
             }
-            
             HStack{
                 Text("сумма на счеТу")
                     .foregroundColor(.gray)
