@@ -7,18 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A62CC8212A2353A100932E87 /* financialAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62CC8202A2353A100932E87 /* financialAppApp.swift */; };
-		A62CC8232A2353A100932E87 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62CC8222A2353A100932E87 /* ContentView.swift */; };
 		A62CC8252A2353A100932E87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A62CC8242A2353A100932E87 /* Assets.xcassets */; };
 		A62CC8282A2353A100932E87 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A62CC8272A2353A100932E87 /* Preview Assets.xcassets */; };
+		A64872752A235422003F2A45 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64872722A235422003F2A45 /* DataController.swift */; };
+		A64872762A235422003F2A45 /* Waste.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A64872732A235422003F2A45 /* Waste.xcdatamodeld */; };
+		A648727A2A235497003F2A45 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64872782A235497003F2A45 /* HomeViewModel.swift */; };
+		A648727B2A235497003F2A45 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64872792A235497003F2A45 /* HomeView.swift */; };
+		A648727F2A2354A2003F2A45 /* financialSavingsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A648727D2A2354A2003F2A45 /* financialSavingsApp.swift */; };
+		A64872802A2354A2003F2A45 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = A648727E2A2354A2003F2A45 /* Categories.swift */; };
+		A64872832A2354AD003F2A45 /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64872822A2354AD003F2A45 /* BalanceView.swift */; };
+		A64872872A235510003F2A45 /* AddWasteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64872852A235510003F2A45 /* AddWasteViewModel.swift */; };
+		A64872882A235510003F2A45 /* AddWasteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64872862A235510003F2A45 /* AddWasteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A62CC81D2A2353A100932E87 /* financialApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = financialApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A62CC8202A2353A100932E87 /* financialAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = financialAppApp.swift; sourceTree = "<group>"; };
-		A62CC8222A2353A100932E87 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A62CC8242A2353A100932E87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A62CC8272A2353A100932E87 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A64872722A235422003F2A45 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		A64872742A235422003F2A45 /* Waste.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Waste.xcdatamodel; sourceTree = "<group>"; };
+		A64872782A235497003F2A45 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		A64872792A235497003F2A45 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		A648727D2A2354A2003F2A45 /* financialSavingsApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = financialSavingsApp.swift; sourceTree = "<group>"; };
+		A648727E2A2354A2003F2A45 /* Categories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
+		A64872822A2354AD003F2A45 /* BalanceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalanceView.swift; sourceTree = "<group>"; };
+		A64872852A235510003F2A45 /* AddWasteViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWasteViewModel.swift; sourceTree = "<group>"; };
+		A64872862A235510003F2A45 /* AddWasteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWasteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +65,11 @@
 		A62CC81F2A2353A100932E87 /* financialApp */ = {
 			isa = PBXGroup;
 			children = (
-				A62CC8202A2353A100932E87 /* financialAppApp.swift */,
-				A62CC8222A2353A100932E87 /* ContentView.swift */,
+				A64872842A235510003F2A45 /* AddWasteModule */,
+				A64872772A235497003F2A45 /* MainModule */,
+				A64872812A2354AD003F2A45 /* Templates */,
+				A648727C2A2354A2003F2A45 /* Other */,
+				A64872712A235422003F2A45 /* DataModel */,
 				A62CC8242A2353A100932E87 /* Assets.xcassets */,
 				A62CC8262A2353A100932E87 /* Preview Content */,
 			);
@@ -65,6 +82,50 @@
 				A62CC8272A2353A100932E87 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A64872712A235422003F2A45 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				A64872722A235422003F2A45 /* DataController.swift */,
+				A64872732A235422003F2A45 /* Waste.xcdatamodeld */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		A64872772A235497003F2A45 /* MainModule */ = {
+			isa = PBXGroup;
+			children = (
+				A64872782A235497003F2A45 /* HomeViewModel.swift */,
+				A64872792A235497003F2A45 /* HomeView.swift */,
+			);
+			path = MainModule;
+			sourceTree = "<group>";
+		};
+		A648727C2A2354A2003F2A45 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				A648727D2A2354A2003F2A45 /* financialSavingsApp.swift */,
+				A648727E2A2354A2003F2A45 /* Categories.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		A64872812A2354AD003F2A45 /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+				A64872822A2354AD003F2A45 /* BalanceView.swift */,
+			);
+			path = Templates;
+			sourceTree = "<group>";
+		};
+		A64872842A235510003F2A45 /* AddWasteModule */ = {
+			isa = PBXGroup;
+			children = (
+				A64872852A235510003F2A45 /* AddWasteViewModel.swift */,
+				A64872862A235510003F2A45 /* AddWasteView.swift */,
+			);
+			path = AddWasteModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +198,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A62CC8232A2353A100932E87 /* ContentView.swift in Sources */,
-				A62CC8212A2353A100932E87 /* financialAppApp.swift in Sources */,
+				A64872802A2354A2003F2A45 /* Categories.swift in Sources */,
+				A64872872A235510003F2A45 /* AddWasteViewModel.swift in Sources */,
+				A64872762A235422003F2A45 /* Waste.xcdatamodeld in Sources */,
+				A64872752A235422003F2A45 /* DataController.swift in Sources */,
+				A648727F2A2354A2003F2A45 /* financialSavingsApp.swift in Sources */,
+				A64872832A2354AD003F2A45 /* BalanceView.swift in Sources */,
+				A64872882A235510003F2A45 /* AddWasteView.swift in Sources */,
+				A648727B2A235497003F2A45 /* HomeView.swift in Sources */,
+				A648727A2A235497003F2A45 /* HomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +407,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A64872732A235422003F2A45 /* Waste.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A64872742A235422003F2A45 /* Waste.xcdatamodel */,
+			);
+			currentVersion = A64872742A235422003F2A45 /* Waste.xcdatamodel */;
+			path = Waste.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A62CC8152A2353A100932E87 /* Project object */;
 }
