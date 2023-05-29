@@ -18,6 +18,7 @@
 		A64872832A2354AD003F2A45 /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64872822A2354AD003F2A45 /* BalanceView.swift */; };
 		A64872872A235510003F2A45 /* AddWasteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64872852A235510003F2A45 /* AddWasteViewModel.swift */; };
 		A64872882A235510003F2A45 /* AddWasteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64872862A235510003F2A45 /* AddWasteView.swift */; };
+		A68485932A2516C6004DF22D /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68485922A2516C6004DF22D /* UserDefaults.swift */; };
 		A6EED2CD2A235E7000D3E62C /* EditWasteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EED2CC2A235E7000D3E62C /* EditWasteModel.swift */; };
 		A6EED2D02A235E9C00D3E62C /* EditWasteVeiw.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EED2CF2A235E9C00D3E62C /* EditWasteVeiw.swift */; };
 		A6EED2D22A235FA000D3E62C /* WasteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EED2D12A235FA000D3E62C /* WasteView.swift */; };
@@ -36,6 +37,7 @@
 		A64872822A2354AD003F2A45 /* BalanceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalanceView.swift; sourceTree = "<group>"; };
 		A64872852A235510003F2A45 /* AddWasteViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWasteViewModel.swift; sourceTree = "<group>"; };
 		A64872862A235510003F2A45 /* AddWasteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWasteView.swift; sourceTree = "<group>"; };
+		A68485922A2516C6004DF22D /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		A6EED2CC2A235E7000D3E62C /* EditWasteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWasteModel.swift; sourceTree = "<group>"; };
 		A6EED2CF2A235E9C00D3E62C /* EditWasteVeiw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWasteVeiw.swift; sourceTree = "<group>"; };
 		A6EED2D12A235FA000D3E62C /* WasteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteView.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				A648727E2A2354A2003F2A45 /* Categories.swift */,
+				A68485922A2516C6004DF22D /* UserDefaults.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 				A64872802A2354A2003F2A45 /* Categories.swift in Sources */,
 				A64872872A235510003F2A45 /* AddWasteViewModel.swift in Sources */,
 				A64872762A235422003F2A45 /* WasteData.xcdatamodeld in Sources */,
+				A68485932A2516C6004DF22D /* UserDefaults.swift in Sources */,
 				A6EED2CD2A235E7000D3E62C /* EditWasteModel.swift in Sources */,
 				A64872752A235422003F2A45 /* DataController.swift in Sources */,
 				A648727F2A2354A2003F2A45 /* financialSavingsApp.swift in Sources */,

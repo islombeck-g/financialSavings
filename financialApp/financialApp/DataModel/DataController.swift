@@ -13,7 +13,7 @@ class DataController:ObservableObject{
                 print("ERRROOOORRR")
             }
         }
-        deleteAllData()
+//        deleteAllData()
 
         fetchWaste()
     }
@@ -43,7 +43,7 @@ class DataController:ObservableObject{
         waste.category = category
         waste.count = count
         waste.note = note
-        waste.date = Date()
+        waste.createDate = Date()
         saveData()
         spent += waste.count
     }
@@ -57,7 +57,10 @@ class DataController:ObservableObject{
             print("Failed to save data: \(error.localizedDescription)")
         }
     }
-    
+    func deleteWaste(waste: WasteEntity) {
+        container.viewContext.delete(waste)
+        saveData()
+    }
 //    func editWaste(waste:Waste, count:Double, category:String, note:String, context:NSManagedObjectContext){
 //        waste.count = count
 //        waste.category = category

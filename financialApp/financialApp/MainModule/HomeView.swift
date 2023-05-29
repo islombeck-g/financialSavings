@@ -6,14 +6,13 @@ import CoreData
 var spent:Double = 0
 
 struct HomeView: View {
-    
+    @StateObject private var userDefaultsClass = UserDefaultsClass()
     @State private var showAddView = false
     @StateObject var dataController = DataController()
     var body: some View {
         NavigationStack{
             ZStack {
                 ScrollView{
-
                         HStack{
                             LazyVGrid(columns: [GridItem(.adaptive(minimum: 165))]) {
                                 BalanceView(text: "потратил", number: spent)
@@ -25,7 +24,7 @@ struct HomeView: View {
                         ForEach(dataController.savedEntities) { waste in
                             NavigationLink(destination: EditWasteVeiw(waste: waste)) {
                                 
-                                    WasteView(wast: waste)
+                                WasteView(wast: waste)
                                     
                                 
                                 
