@@ -75,7 +75,6 @@
 				A6EED2CE2A235E7700D3E62C /* EditModel */,
 				A64872772A235497003F2A45 /* MainModule */,
 				A64872842A235510003F2A45 /* AddWasteModule */,
-				A64872812A2354AD003F2A45 /* Templates */,
 				A64872712A235422003F2A45 /* DataModel */,
 				A648727C2A2354A2003F2A45 /* Other */,
 				A62CC8242A2353A100932E87 /* Assets.xcassets */,
@@ -95,8 +94,8 @@
 		A64872712A235422003F2A45 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
-				A64872722A235422003F2A45 /* DataController.swift */,
 				A64872732A235422003F2A45 /* WasteData.xcdatamodeld */,
+				A64872722A235422003F2A45 /* DataController.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -104,9 +103,9 @@
 		A64872772A235497003F2A45 /* MainModule */ = {
 			isa = PBXGroup;
 			children = (
+				A64872812A2354AD003F2A45 /* Templates */,
 				A64872782A235497003F2A45 /* HomeViewModel.swift */,
 				A64872792A235497003F2A45 /* HomeView.swift */,
-				A6EED2D12A235FA000D3E62C /* WasteView.swift */,
 			);
 			path = MainModule;
 			sourceTree = "<group>";
@@ -122,6 +121,7 @@
 		A64872812A2354AD003F2A45 /* Templates */ = {
 			isa = PBXGroup;
 			children = (
+				A6EED2D12A235FA000D3E62C /* WasteView.swift */,
 				A64872822A2354AD003F2A45 /* BalanceView.swift */,
 			);
 			path = Templates;

@@ -13,9 +13,22 @@ class DataController:ObservableObject{
                 print("ERRROOOORRR")
             }
         }
+        deleteAllData()
+
         fetchWaste()
     }
+    func deleteAllData() {
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "WasteEntity")
+        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
 
+        do {
+            try container.viewContext.execute(batchDeleteRequest)
+            savedEntities = []
+            print("All data deleted successfully.")
+        } catch let error {
+            print("Failed to delete all data: \(error.localizedDescription)")
+        }
+    }
     func fetchWaste(){
         let request = NSFetchRequest<WasteEntity>(entityName: "WasteEntity")
         do{
@@ -32,6 +45,7 @@ class DataController:ObservableObject{
         waste.note = note
         waste.date = Date()
         saveData()
+        spent += waste.count
     }
     
     func saveData() {

@@ -1,6 +1,9 @@
 import SwiftUI
 
 struct BalanceView: View {
+    var text:String
+    var number:Double
+    let limit:Double = 9000
     var body: some View {
         VStack{
             HStack{
@@ -10,13 +13,21 @@ struct BalanceView: View {
                     .background(.blue)
                     .cornerRadius(7.5)
                 Spacer()
-                Text("1.000$")
-                    .font(.headline)
-                    .fontWeight(.bold)
-                    .foregroundColor(.black)
+                if text == "потратил"{
+                    Text("\(number, specifier: "%.2f")")
+                        .font(.headline)
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                }else{
+                    Text("\(limit-spent, specifier: "%.2f")")
+                        .font(.headline)
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                }
+                
             }
             HStack{
-                Text("сумма на счеТу")
+                Text("\(text)")
                     .foregroundColor(.gray)
                     .textCase(.uppercase)
                     .dynamicTypeSize(.small)
@@ -24,14 +35,14 @@ struct BalanceView: View {
         }
         .padding(10)
         .padding(.vertical, 5)
-        .background(.white)
+        .background(Color("colorBalanceBG"))
         .cornerRadius(10)
         
-    }
+    } 
 }
 
 struct BalanceView_Previews: PreviewProvider {
     static var previews: some View {
-        BalanceView()
+        BalanceView(text: "someText", number: 2)
     }
 }

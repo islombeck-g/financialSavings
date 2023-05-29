@@ -81,8 +81,11 @@ struct AddWasteView: View {
                     }
                     ToolbarItem(placement: .navigationBarTrailing){
                         Button {
+                            
+                            print(selectedCategory)
                             guard !count.isEmpty else{return}
-                            dataController.addWaste(category: category, count: Double(count)!, note: note)
+                            dataController.addWaste(category: selectedCategory, count: Double(count)!, note: note)
+                           
                             dismiss()
                             
                         }label: {
