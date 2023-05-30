@@ -3,6 +3,7 @@ import CoreData
 
 class DataController:ObservableObject{
     
+    @Published var userDefaults = UserDefaultsClass()
     @Published var savedEntities:[WasteEntity] = []
     let container:NSPersistentContainer
     
@@ -14,7 +15,7 @@ class DataController:ObservableObject{
             }
         }
 //        deleteAllData()
-
+        userDefaults.updateLimit(newValue: 9000)
         fetchWaste()
     }
     func deleteAllData() {
@@ -45,7 +46,7 @@ class DataController:ObservableObject{
         waste.note = note
         waste.createDate = Date()
         saveData()
-        spent += waste.count
+        userDefaults.increaseNumber(value: count)
     }
     
     func saveData() {
@@ -59,6 +60,7 @@ class DataController:ObservableObject{
     }
     func deleteWaste(waste: WasteEntity) {
         container.viewContext.delete(waste)
+        userDefaults.decreaseNumber(value: waste.count)
         saveData()
     }
 //    func editWaste(waste:Waste, count:Double, category:String, note:String, context:NSManagedObjectContext){

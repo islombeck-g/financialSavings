@@ -1,9 +1,3 @@
-//
-//  UserDefaults.swift
-//  financialApp
-//
-//  Created by Islombek Gofurov on 29.05.2023.
-//
 
 import Foundation
 
@@ -24,5 +18,13 @@ class UserDefaultsClass:ObservableObject{
             self.number = UserDefaults.standard.double(forKey: "number")
             self.limit = UserDefaults.standard.double(forKey: "limit")
         }
-   
+    func updateLimit(newValue: Double) {
+            limit = newValue
+        }
+    func increaseNumber(value:Double) {
+            number += value
+        }
+    func decreaseNumber(value:Double) {
+            number -= value
+        }
 }

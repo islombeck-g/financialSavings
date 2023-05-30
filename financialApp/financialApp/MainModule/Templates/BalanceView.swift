@@ -3,7 +3,7 @@ import SwiftUI
 struct BalanceView: View {
     var text:String
     var number:Double
-    let limit:Double = 9000
+    let limit:Double
     var body: some View {
         VStack{
             HStack{
@@ -19,7 +19,7 @@ struct BalanceView: View {
                         .fontWeight(.bold)
                         .foregroundColor(.black)
                 }else{
-                    Text("\(limit-spent, specifier: "%.2f")")
+                    Text("\(limit-number, specifier: "%.2f")")
                         .font(.headline)
                         .fontWeight(.bold)
                         .foregroundColor(.black)
@@ -43,6 +43,6 @@ struct BalanceView: View {
 
 struct BalanceView_Previews: PreviewProvider {
     static var previews: some View {
-        BalanceView(text: "someText", number: 2)
+        BalanceView(text: "someText", number: 2, limit: 9000)
     }
 }

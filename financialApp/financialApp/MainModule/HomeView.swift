@@ -3,10 +3,9 @@ import SwiftUI
 import CoreData
 
 
-var spent:Double = 0
 
 struct HomeView: View {
-    @StateObject private var userDefaultsClass = UserDefaultsClass()
+    
     @State private var showAddView = false
     @StateObject var dataController = DataController()
     var body: some View {
@@ -15,8 +14,9 @@ struct HomeView: View {
                 ScrollView{
                         HStack{
                             LazyVGrid(columns: [GridItem(.adaptive(minimum: 165))]) {
-                                BalanceView(text: "потратил", number: spent)
-                                BalanceView(text: "до лимита", number:spent)
+                                
+                                BalanceView(text: "потратил", number: dataController.userDefaults.number, limit: dataController.userDefaults.limit)
+                                BalanceView(text: "до лимита", number: dataController.userDefaults.number, limit: dataController.userDefaults.limit)
                             }
                         }.padding()
                     
@@ -70,6 +70,7 @@ struct HomeView: View {
             .sheet(isPresented: $showAddView) {
                 AddWasteView(dataController: dataController)
             }
+            
         }
         
     }

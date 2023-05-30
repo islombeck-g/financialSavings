@@ -1,23 +1,24 @@
 import Foundation
 
 class Category:Hashable{
-   
-//    @Published var defaultCategories: [Category] = [
-//        Category(name: "Car", icon: "car", color: "colorBlue"),
-//        Category(name: "Bank", icon: "creditcard", color: "colorBlue1"),
-//        Category(name: "Супермаркеты", icon: "cart", color: "colorPurple"),
-//        Category(name: "Clothing and footwear", icon: "backpack", color: "colorBrown1"),
-//        Category(name: "Еда вне дома", icon: "popcorn", color: "colorYellow2")
-//    ]
+    
+    //    @Published var defaultCategories: [Category] = [
+    //        Category(name: "Супермаркеты", icon: "cart", color: "colorRed2"),
+    //        Category(name: "Забегаловки", icon: "fork.knife", color: "colorBlue1"),
+    //        Category(name: "Транспорт", icon: "car", color: "colorYellow1"),
+    //        Category(name: "Досуг", icon: "gamecontroller", color: "colorPurple"),
+    //        Category(name: "Универ", icon: "text.book.closed.fill", color: "colorBrown1"),
+    //        Category(name: "Потребности", icon: "house", color: "colorYellow2")
+    //    ]
     
     static func == (lhs: Category, rhs: Category) -> Bool {
-           return lhs.name == rhs.name && lhs.icon == rhs.icon && lhs.color == rhs.color
-       }
+        return lhs.name == rhs.name && lhs.icon == rhs.icon && lhs.color == rhs.color
+    }
     func hash(into hasher: inout Hasher) {
-           hasher.combine(name)
-           hasher.combine(icon)
-           hasher.combine(color)
-       }
+        hasher.combine(name)
+        hasher.combine(icon)
+        hasher.combine(color)
+    }
     var name:String = ""
     var icon:String = ""
     var color:String = ""
@@ -30,10 +31,12 @@ class Category:Hashable{
 }
 extension Category {
     static let defaultCategories: [Category] = [
-        Category(name: "Car", icon: "car", color: "colorBlue"),
-        Category(name: "Bank", icon: "creditcard", color: "colorBlue1"),
-        Category(name: "Супермаркеты", icon: "cart", color: "colorPurple"),
-        Category(name: "Clothing and footwear", icon: "backpack", color: "colorBrown1"),
-        Category(name: "Еда вне дома", icon: "popcorn", color: "colorYellow2")
+        Category(name: "Супермаркеты", icon: "cart", color: "colorRed2"),
+        Category(name: "Забегаловки", icon: "fork.knife", color: "colorBlue1"),
+        Category(name: "Транспорт", icon: "car", color: "colorYellow1"),
+        Category(name: "Досуг", icon: "gamecontroller", color: "colorPurple"),
+        Category(name: "Универ", icon: "text.book.closed.fill", color: "colorBrown1"),
+        Category(name: "Потребности", icon: "house", color: "colorYellow2")
+        
     ]
 }
