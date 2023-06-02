@@ -1,62 +1,99 @@
 import SwiftUI
 
-struct EditWasteVeiw: View {
-    
+struct EditWasteView: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     let waste: FetchedResults<WasteEntity>.Element
     let defaultCategories = Category.defaultCategories
+    @ObservedObject var dataController: DataController
+    @State private var count:Double = 0.0
+    @State private var category:String = ""
+    @State private var note:String = ""
+    @State private var date:Date = Date()
     
     var body: some View {
         VStack{
             HStack{
                 Rectangle()
-                    .foregroundColor(Color(findColor(for: defaultCategories, with: waste.category ?? "")))
+                    .foregroundColor(Color(findColor(for: defaultCategories, with: category)))
                     .frame(width: 6.5, height: 51)
                 
-                Image(systemName: findIcon(for: defaultCategories, with: waste.category ?? ""))
+                Image(systemName: findIcon(for: defaultCategories, with: category))
                     .frame(width: 30, height: 30)
-                    .background(Color(findColor(for: defaultCategories, with: waste.category ?? "")))
+                    .background(Color(findColor(for: defaultCategories, with: category)))
                     .cornerRadius(7.5)
                 
                 Spacer()
                     .frame(width:10)
                 
-                Text("\(waste.category ?? "")")
+                Text("\(category)")
                 
                 Spacer()
                 
-                Text("\(waste.count.formatted()) ₽")
+                Text("\(count.formatted()) ₽")
                     .font(.system(size: 21))
                     .fontWeight(.bold)
             }
             .padding()
             .background(Color("colorBalanceBG"))
             .cornerRadius(10)
-        
+            
             HStack{
                 Image(systemName: "clock")
-                    .foregroundColor(Color(findColor(for: defaultCategories, with: waste.category ?? "")))
-                Text("\(waste.createDate!.formatted())")
+                    .foregroundColor(Color(findColor(for: defaultCategories, with: category)))
+                Text("\(date.formatted())")
                 Spacer()
             }
             .padding()
-                .background(Color("colorBalanceBG"))
-                .cornerRadius(10)
+            .background(Color("colorBalanceBG"))
+            .cornerRadius(10)
             
-            if let note = waste.note, !note.isEmpty {
+            if !note.isEmpty {
                 HStack{
                     Text(note)
                     Spacer()
                 }            .padding()
                     .background(Color("colorBalanceBG"))
                     .cornerRadius(10)
-
-               
+                
+                
             }
             
             Spacer()
         }
+        .onAppear{
+            count = waste.count
+            category = waste.category!
+            note = waste.note ?? ""
+            date = waste.createDate!
+        }
         .padding()
         .background(Color("colorBG"))
+        
+        .navigationBarBackButtonHidden()
+        .toolbar{
+            ToolbarItem(placement: .navigationBarTrailing){
+                Button{
+
+                    self.presentationMode.wrappedValue.dismiss()
+                    dataController.deleteWaste(waste: waste)
+                }label:{
+                    Image(systemName: "minus")
+                }
+            }
+            ToolbarItem(placement: .navigationBarLeading){
+                Button{
+                    dataController.editWaste(waste: waste, count: count, category: category, note: note)
+                    self.presentationMode.wrappedValue.dismiss()
+                }label:{
+                    HStack{
+                        Image(systemName: "chevron.backward")
+                        Text("Назад")
+                    }
+                }
+            }
+            
+        }
+        
     }
     
     func findIcon(for categoryArray: [Category], with name: String) -> String {
@@ -134,9 +171,9 @@ struct EditWasteVeiw: View {
 ////        EditWasteVeiw(waste: DataController().savedEntities.randomElement()!)
 ////    }
 ////}
-struct EditWasteVeiw_Previews: PreviewProvider {
-    static var previews: some View {
-        let waste = WasteEntity(context: DataController().container.viewContext)
-        return EditWasteVeiw(waste: waste)
-    }
-}
+//struct EditWasteVeiw_Previews: PreviewProvider {
+//    static var previews: some View {
+//        let waste = WasteEntity(context: DataController().container.viewContext)
+//        return EditWasteVeiw(waste: waste)
+//    }
+//}

@@ -17,6 +17,18 @@ class UserDefaultsClass:ObservableObject{
     init() {
             self.number = UserDefaults.standard.double(forKey: "number")
             self.limit = UserDefaults.standard.double(forKey: "limit")
+        
+        if let lastResetDate = UserDefaults.standard.object(forKey: "lastResetDate") as? Date {
+                    let calendar = Calendar.current
+                    let components = calendar.dateComponents([.month], from: lastResetDate, to: Date())
+                    if components.month! > 0 {
+                        self.number = 0
+                        UserDefaults.standard.set(Date(), forKey: "lastResetDate")
+                    }
+                } else {
+                    UserDefaults.standard.set(Date(), forKey: "lastResetDate")
+                }
+        
         }
     func updateLimit(newValue: Double) {
             limit = newValue

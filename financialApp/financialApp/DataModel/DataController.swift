@@ -14,7 +14,7 @@ class DataController:ObservableObject{
                 print("ERRROOOORRR")
             }
         }
-//        deleteAllData()
+        deleteAllData()
         userDefaults.updateLimit(newValue: 9000)
         fetchWaste()
     }
@@ -63,12 +63,13 @@ class DataController:ObservableObject{
         userDefaults.decreaseNumber(value: waste.count)
         saveData()
     }
-//    func editWaste(waste:Waste, count:Double, category:String, note:String, context:NSManagedObjectContext){
-//        waste.count = count
-//        waste.category = category
-//        waste.note = note
-//        save(context: context)
-//    }
+    func editWaste(waste:WasteEntity, count:Double, category:String, note:String){
+        waste.count = count
+        waste.category = category
+        waste.note = note
+        saveData()
+        
+    }
     
 }
 

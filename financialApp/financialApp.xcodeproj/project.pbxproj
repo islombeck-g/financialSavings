@@ -22,6 +22,7 @@
 		A6EED2CD2A235E7000D3E62C /* EditWasteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EED2CC2A235E7000D3E62C /* EditWasteModel.swift */; };
 		A6EED2D02A235E9C00D3E62C /* EditWasteVeiw.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EED2CF2A235E9C00D3E62C /* EditWasteVeiw.swift */; };
 		A6EED2D22A235FA000D3E62C /* WasteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EED2D12A235FA000D3E62C /* WasteView.swift */; };
+		A6EFC70C2A29EF690023CC2C /* ChangeLimitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EFC70B2A29EF690023CC2C /* ChangeLimitView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		A6EED2CC2A235E7000D3E62C /* EditWasteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWasteModel.swift; sourceTree = "<group>"; };
 		A6EED2CF2A235E9C00D3E62C /* EditWasteVeiw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWasteVeiw.swift; sourceTree = "<group>"; };
 		A6EED2D12A235FA000D3E62C /* WasteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteView.swift; sourceTree = "<group>"; };
+		A6EFC70B2A29EF690023CC2C /* ChangeLimitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLimitView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 			children = (
 				A6EED2D12A235FA000D3E62C /* WasteView.swift */,
 				A64872822A2354AD003F2A45 /* BalanceView.swift */,
+				A6EFC70B2A29EF690023CC2C /* ChangeLimitView.swift */,
 			);
 			path = Templates;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				A6EED2CD2A235E7000D3E62C /* EditWasteModel.swift in Sources */,
 				A64872752A235422003F2A45 /* DataController.swift in Sources */,
 				A648727F2A2354A2003F2A45 /* financialSavingsApp.swift in Sources */,
+				A6EFC70C2A29EF690023CC2C /* ChangeLimitView.swift in Sources */,
 				A64872832A2354AD003F2A45 /* BalanceView.swift in Sources */,
 				A64872882A235510003F2A45 /* AddWasteView.swift in Sources */,
 				A6EED2D22A235FA000D3E62C /* WasteView.swift in Sources */,

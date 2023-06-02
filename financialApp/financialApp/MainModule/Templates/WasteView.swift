@@ -25,10 +25,10 @@ struct WasteView: View {
                 .font(.system(size: 21))
                 .fontWeight(.bold)
             
-            
         }
 
         .frame(height: 43)
+        
     }
     func findIcon(for categoryArray: [Category], with name: String) -> String {
         return categoryArray.first(where: { $0.name == name })!.icon

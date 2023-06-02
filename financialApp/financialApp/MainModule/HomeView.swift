@@ -1,9 +1,5 @@
-
 import SwiftUI
 import CoreData
-
-
-
 struct HomeView: View {
     
     @State private var showAddView = false
@@ -14,36 +10,23 @@ struct HomeView: View {
                 ScrollView{
                         HStack{
                             LazyVGrid(columns: [GridItem(.adaptive(minimum: 165))]) {
-                                
                                 BalanceView(text: "потратил", number: dataController.userDefaults.number, limit: dataController.userDefaults.limit)
                                 BalanceView(text: "до лимита", number: dataController.userDefaults.number, limit: dataController.userDefaults.limit)
                             }
                         }.padding()
-                    
                     VStack{
                         ForEach(dataController.savedEntities) { waste in
-                            NavigationLink(destination: EditWasteVeiw(waste: waste)) {
-                                
+                            NavigationLink(destination: EditWasteView(waste: waste, dataController: dataController)) {
                                 WasteView(wast: waste)
-                                    
-                                
-                                
-                                
-                                
                             }
                         }.onDelete(perform: deleteWaste)
                             .padding(.horizontal, 15)
-                        
                     }
                     .background(Color("colorBalanceBG"))
                     .cornerRadius(15)
                     .padding(.horizontal, 15)
                     
                 }.background(Color("colorBG"))
-                
-                
-                
-                
                 VStack{
                     Spacer()
                     HStack{
@@ -62,17 +45,11 @@ struct HomeView: View {
                         }.padding(.all, 25)
                     }
                 }
-                
-                
-                
-                
             }.background(Color("colorBG"))
             .sheet(isPresented: $showAddView) {
                 AddWasteView(dataController: dataController)
             }
-            
         }
-        
     }
     private func deleteWaste(offset:IndexSet){
         //later
